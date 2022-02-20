@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSY Rubber Factory</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        penguin: '#FFFBF0',
+                        jacketprice: '#FABE4C',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- slick css  -->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+</head>
+
+<body>
+    <header>
+        <section class="container mx-auto">
+            <div class="flex gap-4 justify-between py-7 px-2">
+                <img class="lg:w-1/4 pointer" src="images/logo.png" alt="company_logo">
+                <div class="hidden lg:inline lg:flex gap-3 border-r-2 pr-20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-600" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path
+                            d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    <div>
+                        <p class="font-thin uppercase">call us</p>
+                        <h4 class="font-medium text-orange-500">+8801700000000</h4>
+                    </div>
+                </div>
+                <div class="hidden lg:inline lg:flex gap-3 border-r-2 pr-20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <div>
+                        <p class="font-thin uppercase">email us</p>
+                        <h4 class="font-medium text-orange-500">info@ksy-rubber.com</h4>
+                    </div>
+                </div>
+                <div class="hidden lg:inline lg:flex gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div>
+                        <p class="font-thin uppercase">we'are open</p>
+                        <h4 class="font-medium text-orange-500">Sun - Thu, 8AM to 5PM</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- responsive stack icon  -->
+    <button class="lg:hidden ml-2 px-2 py-1 rounded-lg" onclick="showList()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+        </svg>
+    </button>
+    <!-- class="sticky top-0 z-50" -->
+    <nav id="nav_list" class="lg:sticky top-0 z-50 hidden lg:block bg-amber-50 py-5 px-4">
+        <ul class="lg:flex gap-x-16 justify-center">
+            <li><a class="text-gray-600 font-semibold hover:underline hover:text-orange-500" href="#">Home</a>
+            </li>
+            <li class="dropdown inline relative"><a
+                    class="text-gray-600 font-semibold hover:underline hover:text-orange-500"
+                    href="#products">Products</a>
+                <ul class="w-32 dropdown-menu absolute hidden drop-shadow-xl bg-slate-50">
+                    <li><a
+                            class=" text-gray-700 cursor-pointer pl-3 py-2 block left-0 hover:bg-gray-200 hover:text-orange-500">Link
+                            1</a></li>
+                    <li><a
+                            class=" text-gray-700 cursor-pointer pl-3 py-2 block left-0 hover:bg-gray-200 hover:text-orange-500">Link
+                            2</a></li>
+                    <li><a
+                            class=" text-gray-700 cursor-pointer pl-3 py-2 block left-0 hover:bg-gray-200 hover:text-orange-500">Link
+                            3</a></li>
+                </ul>
+            </li>
+            <li><a class="text-gray-600 font-semibold hover:underline hover:text-orange-500" href="#lab">Labrotary</a>
+            </li>
+            <li><a class="text-gray-600 font-semibold hover:underline hover:text-orange-500" href="#mold">Mold
+                    Section</a>
+            </li>
+            <li><a class="text-gray-600 font-semibold hover:underline hover:text-orange-500" href="#clients">Clients</a>
+            </li>
+            <li><a class="text-gray-600 font-semibold hover:underline hover:text-orange-500" href="#">About
+                    us</a>
+            </li>
+            <li><a class="text-gray-600 font-semibold hover:underline hover:text-orange-500" href="#">Team
+                    members</a>
+            </li>
+            <li><a class="text-gray-600 font-semibold hover:underline hover:text-orange-500" href="#contactus">Contact
+                    us</a>
+            </li>
+        </ul>
+    </nav>
+    <main class="relative">
+        <!-- Banner  -->
+        <section class="container mx-auto">
+            <img class="object-cover w-full h-full" src="images/Banner-01.png" alt="banner">
+        </section>
+        <section id="products" class="container mx-auto">
+            <h2 class="text-center text-4xl font-bold text-orange-500 my-20">Our Products</h2>
+            <div class="lg:grid grid-cols-3 gap-5 ">
+                <div class="shadow-md hover:shadow-2xl rounded-2xl p-4">
+                    <img class="w-3/4 mx-auto" src="images/product-1.png" alt="product-1">
+                    <h4 class="text-lg uppercase text-gray-700 font-semibold">Rubber Cutlass Bush</h4>
+                    <p class="text-orange-500 font-thin">Your Property in Good Hands.
+                    </p>
+                    <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Eligendi
+                        rem,facilis nobis voluptatum est voluptatem accusamus molestiae eaque perspiciatis mollitia.</p>
+                    <div class="flex justify-between mt-3">
+                        <button
+                            class="bg-orange-400 px-4 py-2 rounded-md text-white hover:bg-orange-600">Details</button>
+                        <button class="bg-orange-400 px-4 py-2 rounded-md text-white hover:bg-orange-600">Request
+                            qoute</button>
+                    </div>
+                </div>
+                <!-- product 2 -->
+                <div class="shadow-md hover:shadow-2xl rounded-2xl p-4">
+                    <img class="w-3/4 mx-auto" src="images/product-2.png" alt="product-1">
+                    <h4 class="text-lg uppercase text-gray-700 font-semibold">Rectangular Fender</h4>
+                    <p class="text-orange-500 font-thin">Your Property in Good Hands.
+                    </p>
+                    <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Eligendi
+                        rem,facilis nobis voluptatum est voluptatem accusamus molestiae eaque perspiciatis mollitia.</p>
+                    <div class="flex justify-between mt-3">
+                        <button
+                            class="bg-orange-400 px-4 py-2 rounded-md text-white hover:bg-orange-600">Details</button>
+                        <button class="bg-orange-400 px-4 py-2 rounded-md text-white hover:bg-orange-600">Request
+                            qoute</button>
+                    </div>
+                </div>
+                <!-- product-3 -->
+                <div class="shadow-md hover:shadow-2xl rounded-2xl p-4">
+                    <img class="w-3/4 mx-auto" src="images/product-3.png" alt="product-1">
+                    <h4 class="text-lg uppercase text-gray-700 font-semibold">Rubber Coupling</h4>
+                    <p class="text-orange-500 font-thin">Your Property in Good Hands.
+                    </p>
+                    <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Eligendi
+                        rem,facilis nobis voluptatum est voluptatem accusamus molestiae eaque perspiciatis mollitia.</p>
+                    <div class="flex justify-between mt-3">
+                        <button
+                            class="bg-orange-400 px-4 py-2 rounded-md text-white hover:bg-orange-600">Details</button>
+                        <button class="bg-orange-400 px-4 py-2 rounded-md text-white hover:bg-orange-600">Request
+                            qoute</button>
+                    </div>
+                </div>
+                <!-- product-4 -->
+                <div class="shadow-md hover:shadow-2xl rounded-2xl p-4">
+                    <img class="w-3/4 mx-auto" src="images/product-4.png" alt="product-1">
+                    <h4 class="text-lg uppercase text-gray-700 font-semibold">Deep Sea Seal</h4>
+                    <p class="text-orange-500 font-thin">Your Property in Good Hands.
+                    </p>
+                    <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Eligendi
+                        rem,facilis nobis voluptatum est voluptatem accusamus molestiae eaque perspiciatis mollitia.</p>
+                    <div class="flex justify-between mt-3">
+                        <button
+                            class="bg-orange-400 px-4 py-2 rounded-md text-white hover:bg-orange-600">Details</button>
+                        <button class="bg-orange-400 px-4 py-2 rounded-md text-white hover:bg-orange-600">Request
+                            qoute</button>
+                    </div>
+                </div>
+                <!-- product-5 -->
+                <div class="shadow-md hover:shadow-2xl rounded-2xl p-4">
+                    <img class="w-3/4 mx-auto" src="images/product-5.png" alt="product-1">
+                    <h4 class="text-lg uppercase text-gray-700 font-semibold">Lip Seal</h4>
+                    <p class="text-orange-500 font-thin">Your Property in Good Hands.
+                    </p>
+                    <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Eligendi
+                        rem,facilis nobis voluptatum est voluptatem accusamus molestiae eaque perspiciatis mollitia.</p>
+                    <div class="flex justify-between mt-3">
+                        <button
+                            class="bg-orange-400 px-4 py-2 rounded-md text-white hover:bg-orange-600">Details</button>
+                        <button class="bg-orange-400 px-4 py-2 rounded-md text-white hover:bg-orange-600">Request
+                            qoute</button>
+                    </div>
+                </div>
+                <!-- product-6 -->
+                <div class="shadow-md hover:shadow-2xl rounded-2xl p-4">
+                    <img class="w-3/4 mx-auto" src="images/product-6.png" alt="product-1">
+                    <h4 class="text-lg uppercase text-gray-700 font-semibold">Butterfly Valve Seal</h4>
+                    <p class="text-orange-500 font-thin">Your Property in Good Hands.
+                    </p>
+                    <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Eligendi
+                        rem,facilis nobis voluptatum est voluptatem accusamus molestiae eaque perspiciatis mollitia.</p>
+                    <div class="flex justify-between mt-3">
+                        <button
+                            class="bg-orange-400 px-4 py-2 rounded-md text-white hover:bg-orange-600">Details</button>
+                        <button class="bg-orange-400 px-4 py-2 rounded-md text-white hover:bg-orange-600">Request
+                            qoute</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- rubber fender item section  -->
+        <section class="container mx-auto">
+            <h2 class="text-center text-4xl font-bold text-orange-500 my-20">Rubber Fender Items</h2>
+            <div class="your">
+                <div>
+                    <img class="w-2/4 mx-auto" src="images/product-7.png" alt="">
+                    <h4 class="text-center text-lg font-medium text-gray-600">O Ring</h4>
+                </div>
+                <div>
+                    <img class="w-2/4 mx-auto" src="images/product-8.png" alt="">
+                    <h4 class="text-center text-lg font-medium text-gray-600">W Fender</h4>
+                </div>
+                <div>
+                    <img class="w-2/4 mx-auto" src="images/product-9.png" alt="">
+                    <h4 class="text-center text-lg font-medium text-gray-600">D Fender</h4>
+                </div>
+                <div>
+                    <img class="w-2/4 mx-auto" src="images/product-10.png" alt="">
+                    <h4 class="text-center text-lg font-medium text-gray-600">Cell Fender</h4>
+                </div>
+                <div>
+                    <img class="w-2/4 mx-auto" src="images/product-11.png" alt="">
+                    <h4 class="text-center text-lg font-medium text-gray-600">Arch Fender</h4>
+                </div>
+            </div>
+        </section>
+        <!-- lab test and certification section  -->
+        <section id="lab" class="container mx-auto">
+            <h2 class="text-center text-4xl font-bold text-orange-500 my-20">Laboratory Test & Certification</h2>
+            <div class="lg:grid grid-cols-4 gap-5">
+                <div class="hover:shadow-md flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-violet-700" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                    </svg>
+                    <div>
+                        <h4 class="uppercase text-lg font-medium text-gray-700">Tensile strength</h4>
+                        <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="hover:shadow-md flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-violet-700" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div>
+                        <h4 class="uppercase text-lg font-medium text-gray-700">permanent
+                            deformation</h4>
+                        <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="hover:shadow-md flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-violet-700" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+                    </svg>
+                    <div>
+                        <h4 class="uppercase text-lg font-medium text-gray-700">ozone resistance</h4>
+                        <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="hover:shadow-md flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-violet-700" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z"
+                            clip-rule="evenodd" />
+                        <path fill-rule="evenodd"
+                            d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z"
+                            clip-rule="evenodd" />
+                        <path fill-rule="evenodd"
+                            d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                        <h4 class="uppercase text-lg font-medium text-gray-700">abrasion resistance</h4>
+                        <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="hover:shadow-md flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-violet-700" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                        <h4 class="uppercase text-lg font-medium text-gray-700">dynamic fatigue</h4>
+                        <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="hover:shadow-md flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-violet-700" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
+                        <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z" />
+                        <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z" />
+                    </svg>
+                    <div>
+                        <h4 class="uppercase text-lg font-medium text-gray-700">elongation at break</h4>
+                        <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="hover:shadow-md flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-violet-700" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                        <h4 class="uppercase text-lg font-medium text-gray-700">compression set</h4>
+                        <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="hover:shadow-md flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-violet-700" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <div>
+                        <h4 class="uppercase text-lg font-medium text-gray-700">mDR testing method</h4>
+                        <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="hover:shadow-md flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-violet-700" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path
+                            d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
+                    </svg>
+                    <div>
+                        <h4 class="uppercase text-lg font-medium text-gray-700">hardness</h4>
+                        <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="hover:shadow-md flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-violet-700" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+                        <path fill-rule="evenodd"
+                            d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                        <h4 class="uppercase text-lg font-medium text-gray-700">mooney viscosity</h4>
+                        <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="hover:shadow-md flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-violet-700" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    <div>
+                        <h4 class="uppercase text-lg font-medium text-gray-700">vMS CHECK</h4>
+                        <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="hover:shadow-md flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-violet-700" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                        <h4 class="uppercase text-lg font-medium text-gray-700">tear resistance</h4>
+                        <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- mold section start from here  -->
+        <section id="mold" class="container mx-auto">
+            <h2 class="text-center text-4xl font-bold text-orange-500 my-20">Mold Section</h2>
+            <div class="lg:grid grid-cols-2 gap-12 ">
+                <div class="rounded-2xl px-14 space-y-4">
+                    <img class="mx-auto" src="images/cnc-machine.png" alt="product-1">
+                    <h4 class="text-lg uppercase text-gray-700 font-semibold">High Tech CNC Machine</h4>
+                    <p class="text-gray-500 font-light">Every Mold has been making by high tech cnc machine to
+                        maintanance high precision and smooth surface finishing which led to be perfect qualityful
+                        products as a outcome. </p>
+                </div>
+                <!-- product 2 -->
+                <div class="rounded-2xl px-14 space-y-4">
+                    <img class="mx-auto" src="images/design-house.png" alt="product-1">
+                    <h4 class="text-lg uppercase text-gray-700 font-semibold">Design House</h4>
+                    <p class="text-gray-500 font-light">Every Mold has been making by high tech cnc machine to
+                        maintanance high precision and smooth surface finishing which led to be perfect qualityful
+                        products as a outcome. </p>
+                </div>
+            </div>
+        </section>
+        <!-- job process under mold section  -->
+        <section class="container mx-auto">
+            <h2 class="text-center text-4xl font-bold text-orange-500 my-20">Job Process</h2>
+            <div class="lg:grid grid-cols-4 gap-8 ">
+                <div class="rounded-2xl space-y-4">
+                    <img class="w-3/4 mx-auto" src="images/meating.png" alt="product-1">
+                    <h4 class="text-lg uppercase text-gray-700 font-semibold">Specification Gathering</h4>
+                    <p class="text-gray-500 font-light">Our expert personnel collect the products informative data
+                        through the whole process.</p>
+                </div>
+                <div class="rounded-2xl space-y-4">
+                    <img class="w-3/4 mx-auto" src="images/product-development.png" alt="product-1">
+                    <h4 class="text-lg uppercase text-gray-700 font-semibold">Product Development & Analysis</h4>
+                    <p class="text-gray-500 font-light">We have standard framework and analyser to develop a new
+                        customized innovation product.</p>
+                </div>
+                <div class="rounded-2xl space-y-4">
+                    <img class="w-3/4 mx-auto" src="images/mold-development.png" alt="product-1">
+                    <h4 class="text-lg uppercase text-gray-700 font-semibold">Prototype Mold Development</h4>
+                    <p class="text-gray-500 font-light">Making prototype mold for better understand of Rubber Items and
+                        make ensure that we can work efficiently and flexibly. </p>
+                </div>
+                <div class="rounded-2xl space-y-4">
+                    <img class="w-3/4 mx-auto" src="images/mold-analysis.png" alt="product-1">
+                    <h4 class="text-lg uppercase text-gray-700 font-semibold">Mold Flow Analysis</h4>
+                    <p class="text-gray-500 font-light">Mold flow analysis simulates the flow of rubber, which allows us
+                        to mold design to create products of impeccable quality. </p>
+                </div>
+            </div>
+        </section>
+        <!-- our clients  -->
+        <section id="clients" class="container mx-auto">
+            <h2 class="text-center text-4xl font-bold text-orange-500 my-20">Our Clients</h2>
+            <div class="lg:grid grid-cols-6 gap-4 ">
+                <div class="p-4 rounded-2xl space-y-4 hover:shadow-2xl">
+                    <img class="w-3/4 mx-auto" src="images/bcg.png" alt="product-1">
+                    <h4 class="text-xs uppercase text-gray-700 font-semibold">Bangladesh Coast Guard</h4>
+                </div>
+                <div class="p-4 rounded-2xl space-y-4 hover:shadow-2xl">
+                    <img class="w-3/4 mx-auto" src="images/three-angle.png" alt="product-1">
+                    <h4 class="text-xs uppercase text-gray-700 font-semibold">Three angle shipyard</h4>
+                </div>
+                <div class="p-4 rounded-2xl space-y-4 hover:shadow-2xl">
+                    <img class="w-3/4 mx-auto" src="images/five-ring.png" alt="product-1">
+                    <h4 class="text-xs uppercase text-gray-700 font-semibold">Dubai Bangladesh Cement Mills Ltd</h4>
+                </div>
+                <div class="p-4 rounded-2xl space-y-4 hover:shadow-2xl">
+                    <img class="w-3/4 mx-auto" src="images/dew.png" alt="product-1">
+                    <h4 class="text-xs uppercase text-gray-700 font-semibold">Dockyard & Engineering
+                        Works Ltd</h4>
+                </div>
+                <div class="p-4 rounded-2xl space-y-4 hover:shadow-2xl">
+                    <img class="w-3/4 mx-auto" src="images/cddl.png" alt="product-1">
+                    <h4 class="text-xs uppercase text-gray-700 font-semibold">Chittagong Dry Dock Limited</h4>
+                </div>
+                <div class="p-4 rounded-2xl space-y-4 hover:shadow-2xl">
+                    <img class="w-3/4 mx-auto" src="images/navy-logo.png" alt="product-1">
+                    <h4 class="text-xs uppercase text-gray-700 font-semibold">Bangladesh Navy</h4>
+                </div>
+                <div class="p-4 rounded-2xl space-y-4 hover:shadow-2xl">
+                    <img class="w-3/4 mx-auto" src="images/delta-gas.png" alt="product-1">
+                    <h4 class="text-xs uppercase text-gray-700 font-semibold">Delta LP Gas</h4>
+                </div>
+                <div class="p-4 rounded-2xl space-y-4 hover:shadow-2xl">
+                    <img class="w-3/4 mx-auto" src="images/metacenter.png" alt="product-1">
+                    <h4 class="text-xs uppercase text-gray-700 font-semibold">Metacentre Ltd</h4>
+                </div>
+                <div class="p-4 rounded-2xl space-y-4 hover:shadow-2xl">
+                    <img class="w-3/4 mx-auto" src="images/br.png" alt="product-1">
+                    <h4 class="text-xs uppercase text-gray-700 font-semibold">Bangladesh Railway</h4>
+                </div>
+                <div class="p-4 rounded-2xl space-y-4 hover:shadow-2xl">
+                    <img class="w-3/4 mx-auto" src="images/bashundhara.png" alt="product-1">
+                    <h4 class="text-xs uppercase text-gray-700 font-semibold">Bashundhara Group</h4>
+                </div>
+                <div class="p-4 rounded-2xl space-y-4 hover:shadow-2xl">
+                    <img class="w-3/4 mx-auto" src="images/petromax.png" alt="product-1">
+                    <h4 class="text-xs uppercase text-gray-700 font-semibold">Petromax LPG Ltd</h4>
+                </div>
+                <div class="rounded-2xl p-4 space-y-4 hover:shadow-2xl">
+                    <img class="w-3/4 mx-auto" src="images/radiant.png" alt="product-1">
+                    <h4 class="text-xs uppercase text-gray-700 font-semibold">Radiant Shipyard Ltd</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <!-- contact us -->
+        <section id="contactus" class="container mx-auto">
+            <h2 class="text-center text-4xl font-bold text-orange-500 my-20">Contact us</h2>
+        </section>
+
+    </footer>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript" src="initialize.js"></script>
+
+</body>
+
+</html>
